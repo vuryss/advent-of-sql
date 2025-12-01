@@ -1,0 +1,16 @@
+name: Advent of SQL
+
+services:
+    postgres:
+        image: postgres:18.1-alpine3.22
+        environment:
+            POSTGRES_DB: aos
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+        volumes:
+            - database-data:/var/lib/postgresql
+        ports:
+            - '21345:5432'
+
+volumes:
+    database-data:
